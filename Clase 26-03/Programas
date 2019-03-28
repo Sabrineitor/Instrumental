@@ -1,0 +1,6 @@
+Subo los programas de la clase: 
+
+1) En  Reconociendo_el_osci reconocemos el osci y despues levantamos la pantalle del osci con el programa 2
+2) clase_osciloscopio : Este es un código que usé en labo 5 (Define una clase para el osci)
+3) levantamoslapantallaenascii : Levantamos la pantalla del osci es ascii 
+4) levantamos_la_pantalla_en_binario : Levantamos la pantalla del osci en binario (sin exito, falta modificar como leer los datos del osci)
