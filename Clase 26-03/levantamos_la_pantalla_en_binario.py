@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Mar 26 18:17:37 2019
-
-@author: Sabrina
-"""
-
 import numpy as np
 import visa  
 import matplotlib.pyplot as plt
