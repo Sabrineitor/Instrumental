@@ -41,10 +41,10 @@ class Gen(MessageBasedDriver):
 
     # frecuencia = mfeats.QuantityFeat('SOUR{1}:FUNC:FREQ?'.format(1),'SOUR{}:FREQ{}'.format(1,),units = 'Hz', limits = (1,1E6))
     set_query = MessageBasedDriver.write
-    frec_gen = mfeats.QuantityFeat('SOUR1:FUNC:FREQ?', 'SOUR1:FREQ{}', units='Hz', limits=(1, 1E6))
+    frec_gen = mfeats.QuantityFeat('SOUR1:FUNC:FREQ?', 'SOUR1:FREQ{}', units='hertz', limits=(1, 1E6))
 
     #Para probar: esto deberia poner la amplitud
-    amplitud_gen = mfeats.QuantityFeat('SOUR1:VOLTage:LEVel:IMMediate:AMPLitude {}', 'SOUR1:VOLT:LEV:IMMediate:AMPLitude?',units = 'Volts')
+    amplitud_gen = mfeats.QuantityFeat('SOUR1:VOLTageAMPLitude?', 'SOUR1:VOLT:AMPLitude {}',units = 'volt')
 
     #Para probar. Copia del grupo 4. un sweep en frec
     def freq_sweep(self, freq_inicial, freq_final, step, stop=1, channel=1):
@@ -95,11 +95,11 @@ frec_array = np.arange(10,100, 20) #empieza en 10khz termina en 100 khz y el pas
 voltaje_leido = []
 for i in range(frec_array):
     with Gen.via_usb('C034166') as gene:
-        gene.frecgen = frec_array[i] #asi seteo la frec que quiero
-        gene.amplitud_gen = V1 #esto setea la amplitud del gen en V1 (la toma el osci despues creo)
+        gene.frecgen = frec_array[i] * ureg.hertz#asi seteo la frec que quiero
+        gene.amplitud_gen = V1 * ureg.volts #esto setea la amplitud del gen en V1 (la toma el osci despues creo)
         with Osc.via_usb('C108011') as osci:
-            osci.voltaje = gene.amplitud_gen #ASI ESTA BIEN?
-            osci.timebase = 5 * (1/gene.frec_gen) * ureg.seconds  #Esto toma 5 picos de la senal del generador 
+            osci.voltaje = gene.amplitud_gen * ureg.volts #ASI ESTA BIEN?
+            osci.timebase = 5 * (1/gene.frec_gen) * ureg.hertz  #Esto toma 5 picos de la senal del generador 
             # y esta 1/.. porque asi es es la frec  
             voltaje_leido.append(osci.frec)
             #Lo que no me termina de quedar claro es que la señal del gen no se me vaya de la pantalla del osci !!!
