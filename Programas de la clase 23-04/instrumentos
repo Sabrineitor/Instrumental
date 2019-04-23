@@ -1,0 +1,84 @@
+from lantz import MessageBasedDriver, Feat, ureg
+from lantz.core import mfeats
+import numpy as np
+import time
+import pyaudio
+
+# el gen es C034165
+#el osci es
+
+
+class Gen(MessageBasedDriver):
+    MANUFACTURER_ID = '0x0699'
+    MODEL_CODE = '0x0346'
+
+    @Feat(read_once=True)
+    def idn(self):
+        return self.query('*IDN?')
+
+    # frecuencia = mfeats.QuantityFeat('SOUR{1}:FUNC:FREQ?'.format(1),'SOUR{}:FREQ{}'.format(1,),units = 'Hz', limits = (1,1E6))
+    set_query = MessageBasedDriver.write
+    frec_gen = mfeats.QuantityFeat('SOUR1:FUNC:FREQ?', 'SOUR1:FREQ:FIX {}', units='hertz', limits=(1, 1E6))
+
+    #Para probar: esto deberia poner la amplitud
+    amplitud_gen = mfeats.QuantityFeat('SOUR1:VOLTage:AMPLitude?', 'SOUR1:VOLT:AMPLitude {}',units = 'volt')
+
+    #Para probar. Copia del grupo 4. un sweep en frec
+    def freq_sweep(self, freq_inicial, freq_final, step, stop=1, channel=1):
+        # Hace un barrido de frecuencias desde freq_inicial hasta freq_final con un step.
+        # Entre cada cambio de frecuencia dejamos 1 segundo de stop.
+        frecuencias = np.arange(freq_inicial, freq_final, step)
+        for elemento in frecuencias:
+            self.write('SOUR{}:FREQ:FIX {}'.format(channel, elemento))
+            time.sleep(stop)
+
+
+
+freq_inicial = 1000
+freq_final = 2000
+step = 1
+
+
+
+with Gen.via_usb('C034165') as gene:
+    print(gene.idn)
+    gene.amplitud_gen= 0.5 * ureg.volt
+    gene.frec_gen = 300 * ureg.hertz
+#     Asi lo hace estilo swepp
+#     gene.freq_sweep(freq_inicial, freq_final, step)
+
+#with Osc.via_usb('C108011') as osci:
+#     print(osci.idn)
+#     print(osci.timebase)
+#     # osci.timebase = 0.5 *ureg.seconds
+#     #print(osci.frec)
+# Para probar con el sweep:
+
+
+
+
+#Esto es lo que quiero que haga el programa:
+# Programa:
+#
+# -generar un array 1 10 100
+#
+# - en un loop:
+#       -Setear generador a f1 y V1 y meter en vector las frec
+#
+#     -Setear Osci a partir de f1 y V1
+#
+#     - Lea la frec y la meto en vector
+""""
+frec_array = np.arange(10,100, 20) #empieza en 10khz termina en 100 khz y el paso es de 20
+frec_leido = []
+V1 = 18
+for i in range(len(frec_array)):
+    with Gen.via_usb('C034166') as gene:
+        gene.frecgen = frec_array[i] #asi seteo la frec que quiero
+        gene.amplitud_gen = V1 #esto setea la amplitud del gen en V1 (la toma el osci despues creo)
+        with Osc.via_usb('C108011') as osci:
+            osci.voltaje = gene.amplitud_gen #ASI ESTA BIEN?
+            osci.timebase = 5 * (1/gene.frec_gen) * ureg.seconds  #Esto toma 5 picos de la senal del generador
+            # y esta 1/.. porque asi es es la frec
+            frec_leido.append(osci.frec)
+"""
