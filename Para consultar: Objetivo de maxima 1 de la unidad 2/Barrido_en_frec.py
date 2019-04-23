@@ -96,10 +96,12 @@ voltaje_leido = []
 for i in range(frec_array):
     with Gen.via_usb('C034166') as gene:
         gene.frecgen = frec_array[i] #asi seteo la frec que quiero
-        gene.amplitud_gen = V1 #NO ME ACUERDO PORQUE ESTABA ESTO
+        gene.amplitud_gen = V1 #esto setea la amplitud del gen en V1 (la toma el osci despues creo)
         with Osc.via_usb('C108011') as osci:
-            osci.voltaje = gene.amplitud_gen
-            osci.timebase = gene.frec_gen * ureg.seconds
+            osci.voltaje = gene.amplitud_gen #ASI ESTA BIEN?
+            osci.timebase = 5 * (1/gene.frec_gen) * ureg.seconds  #Esto toma 5 picos de la senal del generador 
+            # y esta 1/.. porque asi es es la frec  
             voltaje_leido.append(osci.frec)
+            #Lo que no me termina de quedar claro es que la señal del gen no se me vaya de la pantalla del osci !!!
 
 
