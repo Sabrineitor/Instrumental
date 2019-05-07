@@ -48,7 +48,7 @@ class Osciloscopio(MessageBasedDriver):
     
 Fs = [1000, 10000]    
 
-A = 0.01
+A = 0.5
 
 CHUNK = 1024
 FORMAT = pyaudio.paInt16
@@ -101,13 +101,12 @@ for k in range(len(Fs)):
     wf.writeframes(b''.join(frames))
     wf.close()
     
-#Ahora voy a sacar los parametros:
+    #Ahora voy a sacar los parametros:
 
-    file = 'SeñalRecibida.wav'
-    print('casi')
+    file = 'SenalRecibida.wav'
     wav_file = wave.open(file,'rb')
-    print('casi casi')
-#Extract Raw Audio from Wav File
+    print('Hasta acá')
+    #Extract Raw Audio from Wav File
     signal = wav_file.readframes(-1)
     if wav_file.getsampwidth() == 1:
         signal = np.array(np.frombuffer(signal, dtype='UInt8')-128, dtype='Int8')
@@ -115,7 +114,7 @@ for k in range(len(Fs)):
         signal = np.frombuffer(signal, dtype='Int16')
     else:
         raise RuntimeError("Unsupported sample width")
-
+    print('despaciooo')
 # http://schlameel.com/2017/06/09/interleaving-and-de-interleaving-data-with-python/
     deinterleaved = [signal[idx::wav_file.getnchannels()] for idx in range(wav_file.getnchannels())] #Creo que aca esta la información de todos los channels, voy a agarrar el primero, pero puede ser que este mal 
 
@@ -126,9 +125,9 @@ for k in range(len(Fs)):
     
 #Voy a savcar los parametros de la señal recibida: 
 
-    p0 = [A,Fs[i],0.]
+    p0 = [A,Fs[k],0.]
 
-    popt,pcov = curve_fit(Seno, DominioAudio, deinterleaved[1] , p0=p0, absolute_sigma=True, sigma= 0.002)
+    popt,pcov = curve_fit(Seno, DominioAudio, deinterleaved[1] , p0=p0)#, absolute_sigma=True, sigma= 0.002)
     perr = np.sqrt(np.diag(pcov))    
     
     Fsal.append(popt[1])    
