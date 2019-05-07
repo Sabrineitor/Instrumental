@@ -48,7 +48,7 @@ class Osciloscopio(MessageBasedDriver):
     
 Fs = [1000, 10000]    
 
-A = 0.5
+A = 0.01
 
 CHUNK = 1024
 FORMAT = pyaudio.paInt16
@@ -69,11 +69,11 @@ for k in range(len(Fs)):
         
        
     Fenv.append(Fs[k])
-    print('Hola')
+    
     WAVE_OUTPUT_FILENAME = 'SenalRecibida.wav'
-    print('Hola')
+    
     p = pyaudio.PyAudio()
-    print('Hola')
+    
     stream = p.open(format=FORMAT,
                     channels=CHANNELS, 
                     rate=RATE, 
@@ -104,9 +104,9 @@ for k in range(len(Fs)):
 #Ahora voy a sacar los parametros:
 
     file = 'SeñalRecibida.wav'
-
-    wav_file = wave.open(file,'r')
-
+    print('casi')
+    wav_file = wave.open(file,'rb')
+    print('casi casi')
 #Extract Raw Audio from Wav File
     signal = wav_file.readframes(-1)
     if wav_file.getsampwidth() == 1:
