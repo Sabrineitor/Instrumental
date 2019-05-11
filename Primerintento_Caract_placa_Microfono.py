@@ -1,3 +1,4 @@
+#Este progrma es un primer intento para caract l placa de audio como microfono (puede fallar, es un primer intento)
 from lantz import MessageBasedDriver, Feat, ureg
 from lantz.core import mfeats
 #import time
