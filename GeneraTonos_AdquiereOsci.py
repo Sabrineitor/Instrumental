@@ -1,3 +1,8 @@
+#Este progrma genera tonos a distintasfrec y adquiere la pantalla del osci y la plotea
+#IMPORTANTE: asi como esta agarra el canal dos
+#Falta configurarle que agarre el canala uno
+#Este programa lo usamos para caract la compu como parlante y para levantar la curva del diodo
+
 import numpy
 import pyaudio
 import math
@@ -70,7 +75,7 @@ class Oscilo(MessageBasedDriver):
 
     set_query = MessageBasedDriver.write
 
-    bt_osciloscopio = mfeats.QuantityFeat('HOR:MAIN:SCA?', 'HOR:DEL:SCA {}', units='s', limits=(0.01, 100))
+    bt_osciloscopio = mfeats.QuantityFeat('HOR:MAIN:SCA?', 'HOR:DEL:SCA {}', units='s', limits=(0.00001, 1000000))
 
     @Feat(units='Hz')
     def get_frec(self):
@@ -92,7 +97,8 @@ class Oscilo(MessageBasedDriver):
     def data_setup(self):
         """ Sets the way data is going to be encoded for sending.
         """
-        self.write('DAT:ENC ASCI;WID 1')  # ASCII is the least efficient way, but
+        self.write('DAT:ENC ASCI')
+        self.write('DAT:WID 1')  # ASCII is the least efficient way, but
         # couldn't make the binary mode to work
 
     @Action()
@@ -100,16 +106,18 @@ class Oscilo(MessageBasedDriver):
         """ Gets data from the oscilloscope. It accepts setting the start and
             stop points of the acquisition (by default the entire range).
         """
-        parameters = self.acquire_parameters()
         self.data_setup()
+        parameters = self.acquire_parameters()
+
         self.write('DAT:STAR {}'.format(start))
         self.write('DAT:STOP {}'.format(stop))
         data = self.query('CURV?')
         data = data.split(',')
-        data = np.array(list(map(float, data)))
-        voltaje = (data - parameters['YOF']) * parameters['YMU']  + parameters['YZE']
-        tiempo = np.arange(len(data)) * parameters['XIN'] + parameters['XZE']
+        data = numpy.array(list(map(float, data)))
+        voltaje = (data - parameters['YOF']) * parameters['YMU']+ parameters['YZE']
+        tiempo = numpy.arange(len(data)) * parameters['XIN'] + parameters['XZE']
         return list(tiempo), list(voltaje)
+        #return data #asi devuelve los datos crudos
 
 
 
@@ -119,32 +127,30 @@ frequency_start = 1000  # Frequency to start the sweep from
 frequency_end = 2000  # Frequency to end the sweep at
 num_frequencies = 2  # Number of frequencies in the sweep
 amplitude = 1  # Amplitude of the waveform
-step_duration = 5  # Time (seconds) to play at each step
+file = 'diodo_linea_ruido_CC_10p1Mohm_f'
+step_duration = 4.0  # Time (seconds) to play at each step
 
 for frequency in numpy.logspace(math.log(frequency_start, 10),
                                 math.log(frequency_end, 10),
                                 num_frequencies):
-    print('casiii')
-    with Oscilo.via_usb('C102220') as O:
-        O.bt_osciloscopio= 5 * (1/frequency) * ureg.seconds #Le pongo una base como para que agarre 5 picos (creo)
-        O.set_scale = (amplitude + amplitude/2) * ureg.volt #NECESITO LA FUNCION PARA PONERLE LA ESCALA DE AMPLITUD
-    print('casiiii')
-    #print("Playing tone at {0:0.2f} Hz".format(frequency))
+    #Las siguientes lineas no funcionaban ==> PUSIMOS QUE EL OSCI QUE SE CONFIGURE EN AUTOMATICO
+    #with Oscilo.via_usb('C102220') as O:
+    #    O.bt_osciloscopio= 1.0 *(1.0/frequency) * ureg.seconds #Le pongo una base como para que agarre 5 picos (creo)
+     #   O.set_scale = 1.0 * amplitude  * ureg.volt #NECESITO LA FUNCION PARA PONERLE LA ESCALA DE AMPLITUD
+  
+    
     generator.play(frequency, step_duration, amplitude)
-
-    m = 0
-
+    time.sleep(0.51) #PARA QUE ESPERE ENTRE TONO Y TONO
+    with Oscilo.via_usb('C102220') as O:
+        print(O.acquire_parameters())
+        x, y = O.acquire_curve()
+        x = numpy.array(x)
+        y = numpy.array(y)
+        data = numpy.array([x, y])
+        data = data.T 
+        numpy.savetxt(file  + str(frequency) + '.txt', data, delimiter= " ")
+    plt.plot(x,y)
     while generator.is_playing():
         print("estoy sonando" + str(frequency))
 
-        if m == 0:
-            with Oscilo.via_usb('C102220') as O:
-                x, y = O.acquire_curve()
-                x = np.array(x)
-                y = np.array(y)
-                data = np.array([x, y])
-                data = data.T #estoy bastante segura que tiene que estar
-                np.savetxt('timpo' + str(frequency) + '.txt', data, delimiter= " ")
-            m=1
-        else:
-            print("Se tomaron los datos")
+plt.show()
