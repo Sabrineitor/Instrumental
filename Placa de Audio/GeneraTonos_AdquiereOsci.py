@@ -1,5 +1,5 @@
 #Este progrma genera tonos a distintasfrec y adquiere la pantalla del osci y la plotea
-#IMPORTANTE: asi como esta agarra el canal dos
+#IMPORTANTE: asi como esta agarra el canal dos (EDIT 22/05 ESTO LO SOLUCIONAMOS, VER CODIGO DE LA CARPETA OPAMP, OPAMP.PY)
 #Falta configurarle que agarre el canala uno
 #Este programa lo usamos para caract la compu como parlante y para levantar la curva del diodo
 
