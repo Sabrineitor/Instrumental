@@ -1,0 +1,5 @@
+class_spec: run:LEDDriver
+fqbn: ''
+port: ''
+sketch_folder: C:\Users\realm.DESKTOP-DQ0IJ8Q\Documents\GitHub\instrumentacion2\20190604\examples-master\arduino-qt-toogle-led\LEDDriver
+usbID: ''

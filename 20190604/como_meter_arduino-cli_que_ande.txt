@@ -1,0 +1,785 @@
+Microsoft Windows [Version 10.0.17134.765]
+(c) 2018 Microsoft Corporation. All rights reserved.
+
+C:\Users\realm.DESKTOP-DQ0IJ8Q>activate conda
+
+C:\Users\realm.DESKTOP-DQ0IJ8Q>conda.bat activate conda
+Could not find conda environment: conda
+You can list all discoverable environments with `conda info --envs`.
+
+
+C:\Users\realm.DESKTOP-DQ0IJ8Q>conda activate
+
+(base) C:\Users\realm.DESKTOP-DQ0IJ8Q>activate lantz2
+
+(lantz2) C:\Users\realm.DESKTOP-DQ0IJ8Q>cd Documents
+
+(lantz2) C:\Users\realm.DESKTOP-DQ0IJ8Q\Documents>ls
+'ls' is not recognized as an internal or external command,
+operable program or batch file.
+
+(lantz2) C:\Users\realm.DESKTOP-DQ0IJ8Q\Documents>dir
+ Volume in drive C is Windows
+ Volume Serial Number is B6A1-6176
+
+ Directory of C:\Users\realm.DESKTOP-DQ0IJ8Q\Documents
+
+19/05/28  18:36    <DIR>          .
+19/05/28  18:36    <DIR>          ..
+19/01/25  18:21    <DIR>          .ipynb_checkpoints
+19/05/28  18:48    <DIR>          arduino
+19/06/02  10:37    <DIR>          ArduinoData
+18/12/19  10:13    <DIR>          Custom Office Templates
+19/05/13  21:38    <DIR>          design resources
+19/05/29  21:10    <DIR>          doctorado
+19/05/28  16:56               841 Downloads - Shortcut.lnk
+18/12/14  10:05    <DIR>          g95
+19/05/29  20:51    <DIR>          GitHub
+19/03/27  00:36    <DIR>          hardware
+19/03/26  21:58    <DIR>          lyx
+19/05/13  10:19    <DIR>          marianoreal@inti
+19/04/03  02:17    <DIR>          markdown
+19/03/25  00:49    <DIR>          MATLAB
+19/04/12  11:06    <DIR>          OpenSCAD
+18/12/10  14:16    <DIR>          Plantillas personalizadas de Office
+19/05/08  18:19    <DIR>          Python Scripts
+19/05/28  13:36    <DIR>          tmp
+19/04/04  11:46           340,549 unicode_greek.pdf
+19/05/24  01:32    <DIR>          Visual Studio 2019
+19/04/14  12:37    <DIR>          WindowsPowerShell
+               2 File(s)        341,390 bytes
+              21 Dir(s)  76,527,083,520 bytes free
+
+(lantz2) C:\Users\realm.DESKTOP-DQ0IJ8Q\Documents>cd GitHub
+
+(lantz2) C:\Users\realm.DESKTOP-DQ0IJ8Q\Documents\GitHub>cd instrumentacion2
+
+(lantz2) C:\Users\realm.DESKTOP-DQ0IJ8Q\Documents\GitHub\instrumentacion2>dir
+ Volume in drive C is Windows
+ Volume Serial Number is B6A1-6176
+
+ Directory of C:\Users\realm.DESKTOP-DQ0IJ8Q\Documents\GitHub\instrumentacion2
+
+19/06/04  14:44    <DIR>          .
+19/06/04  14:44    <DIR>          ..
+19/05/29  20:43    <DIR>          20190319
+19/05/29  20:50    <DIR>          20190326
+19/05/29  20:50    <DIR>          20190409
+19/05/29  20:50    <DIR>          20190416
+19/05/29  20:50    <DIR>          20190423
+19/05/29  20:50    <DIR>          20190508
+19/05/29  20:50    <DIR>          20190515
+19/06/01  22:04    <DIR>          20190528
+19/06/04  14:47    <DIR>          20190604
+19/05/29  20:43               629 cos.py
+19/05/29  20:50    <DIR>          ideas otros grupos
+19/05/29  20:43               188 plotCoseno.py
+19/05/29  20:43               272 README.md
+19/05/29  20:50               318 README_GIT_WIN.txt
+               4 File(s)          1,407 bytes
+              12 Dir(s)  76,527,083,520 bytes free
+
+(lantz2) C:\Users\realm.DESKTOP-DQ0IJ8Q\Documents\GitHub\instrumentacion2>cd 20190604
+
+(lantz2) C:\Users\realm.DESKTOP-DQ0IJ8Q\Documents\GitHub\instrumentacion2\20190604>lantz config core.visa_backend '@py'
+
+(lantz2) C:\Users\realm.DESKTOP-DQ0IJ8Q\Documents\GitHub\instrumentacion2\20190604>lantz ino new run:LEDDriver
+Traceback (most recent call last):
+  File "c:\users\realm.desktop-dq0ij8q\.conda\envs\lantz2\lib\runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "c:\users\realm.desktop-dq0ij8q\.conda\envs\lantz2\lib\runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "C:\Users\realm.DESKTOP-DQ0IJ8Q\.conda\envs\lantz2\Scripts\lantz.exe\__main__.py", line 9, in <module>
+  File "c:\users\realm.desktop-dq0ij8q\.conda\envs\lantz2\lib\site-packages\lantz\__main__.py", line 33, in main
+    parser.dispatch(args)
+  File "c:\users\realm.desktop-dq0ij8q\.conda\envs\lantz2\lib\site-packages\lantz\__init__.py", line 56, in dispatch
+    self.__choices[required_value](pending)
+  File "c:\users\realm.desktop-dq0ij8q\.conda\envs\lantz2\lib\site-packages\lantz\ino\__main__.py", line 21, in main
+    parser.dispatch(args)
+  File "c:\users\realm.desktop-dq0ij8q\.conda\envs\lantz2\lib\site-packages\lantz\__init__.py", line 56, in dispatch
+    self.__choices[required_value](pending)
+  File "c:\users\realm.desktop-dq0ij8q\.conda\envs\lantz2\lib\site-packages\lantz\ino\__main__.py", line 59, in new
+    cls = _load_class(args.class_spec)
+  File "c:\users\realm.desktop-dq0ij8q\.conda\envs\lantz2\lib\site-packages\lantz\ino\__main__.py", line 141, in _load_class
+    module = importlib.import_module(module_spec)
+  File "c:\users\realm.desktop-dq0ij8q\.conda\envs\lantz2\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 953, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'run'
+
+(lantz2) C:\Users\realm.DESKTOP-DQ0IJ8Q\Documents\GitHub\instrumentacion2\20190604>dir
+ Volume in drive C is Windows
+ Volume Serial Number is B6A1-6176
+
+ Directory of C:\Users\realm.DESKTOP-DQ0IJ8Q\Documents\GitHub\instrumentacion2\20190604
+
+19/06/04  14:47    <DIR>          .
+19/06/04  14:47    <DIR>          ..
+19/01/07  16:27    <DIR>          examples-master
+               0 File(s)              0 bytes
+               3 Dir(s)  76,523,368,448 bytes free
+
+(lantz2) C:\Users\realm.DESKTOP-DQ0IJ8Q\Documents\GitHub\instrumentacion2\20190604>cd examples-master
+
+(lantz2) C:\Users\realm.DESKTOP-DQ0IJ8Q\Documents\GitHub\instrumentacion2\20190604\examples-master>cd arduino-qt-toogle-led
+
+(lantz2) C:\Users\realm.DESKTOP-DQ0IJ8Q\Documents\GitHub\instrumentacion2\20190604\examples-master\arduino-qt-toogle-led>dir
+ Volume in drive C is Windows
+ Volume Serial Number is B6A1-6176
+
+ Directory of C:\Users\realm.DESKTOP-DQ0IJ8Q\Documents\GitHub\instrumentacion2\20190604\examples-master\arduino-qt-toogle-led
+
+19/01/07  16:27    <DIR>          .
+19/01/07  16:27    <DIR>          ..
+19/01/07  16:27    <DIR>          img
+19/01/07  16:27               778 LED.ui
+19/01/07  16:27             2,449 README.md
+19/01/07  16:27             1,155 run.py
+               3 File(s)          4,382 bytes
+               3 Dir(s)  76,523,368,448 bytes free
+
+(lantz2) C:\Users\realm.DESKTOP-DQ0IJ8Q\Documents\GitHub\instrumentacion2\20190604\examples-master\arduino-qt-toogle-led>lantz ino new run:LEDDriver
+Packfile created in: .\LEDDriver.pack.yaml
+Sketch created in: C:\Users\realm.DESKTOP-DQ0IJ8Q\Documents\GitHub\instrumentacion2\20190604\examples-master\arduino-qt-toogle-led\LEDDriver
+
+(lantz2) C:\Users\realm.DESKTOP-DQ0IJ8Q\Documents\GitHub\instrumentacion2\20190604\examples-master\arduino-qt-toogle-led>python run.py
+C:\Users\realm.DESKTOP-DQ0IJ8Q\.conda\envs\lantz2\lib\site-packages\lantz\ino\common.py:60: YAMLLoadWarning: calling yaml.load() without Loader=... is deprecated, as the default Loader is unsafe. Please read https://msg.pyyaml.org/load for full details.
+  data = yaml.load(fi)
+Traceback (most recent call last):
+  File "run.py", line 33, in <module>
+    with QLED.via_packfile('LEDDriver.pack.yaml', check_update=True) as board:
+  File "C:\Users\realm.DESKTOP-DQ0IJ8Q\.conda\envs\lantz2\lib\site-packages\lantz\ino\base.py", line 232, in via_packfile
+    arduinocli.compile_and_upload(pf, upload=True)
+  File "C:\Users\realm.DESKTOP-DQ0IJ8Q\.conda\envs\lantz2\lib\site-packages\lantz\ino\arduinocli.py", line 101, in compile_and_upload
+    boards = find_boards_pack(packfile)
+  File "C:\Users\realm.DESKTOP-DQ0IJ8Q\.conda\envs\lantz2\lib\site-packages\lantz\ino\arduinocli.py", line 73, in find_boards_pack
+    boards = find_boards(packfile.fqbn, packfile.port, packfile.usbID)
+  File "C:\Users\realm.DESKTOP-DQ0IJ8Q\.conda\envs\lantz2\lib\site-packages\lantz\ino\arduinocli.py", line 50, in find_boards
+    boards = run_arduino_cli('board list')
+  File "C:\Users\realm.DESKTOP-DQ0IJ8Q\.conda\envs\lantz2\lib\site-packages\lantz\ino\arduinocli.py", line 44, in run_arduino_cli
+    out = subprocess.run(['arduino-cli', '--format', 'json'] + args.split(' '), stdout=subprocess.PIPE)
+  File "C:\Users\realm.DESKTOP-DQ0IJ8Q\.conda\envs\lantz2\lib\subprocess.py", line 423, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "C:\Users\realm.DESKTOP-DQ0IJ8Q\.conda\envs\lantz2\lib\subprocess.py", line 729, in __init__
+    restore_signals, start_new_session)
+  File "C:\Users\realm.DESKTOP-DQ0IJ8Q\.conda\envs\lantz2\lib\subprocess.py", line 1017, in _execute_child
+    startupinfo)
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+
+(lantz2) C:\Users\realm.DESKTOP-DQ0IJ8Q\Documents\GitHub\instrumentacion2\20190604\examples-master\arduino-qt-toogle-led>dir
+ Volume in drive C is Windows
+ Volume Serial Number is B6A1-6176
+
+ Directory of C:\Users\realm.DESKTOP-DQ0IJ8Q\Documents\GitHub\instrumentacion2\20190604\examples-master\arduino-qt-toogle-led
+
+19/06/04  14:53    <DIR>          .
+19/06/04  14:53    <DIR>          ..
+19/01/07  16:27    <DIR>          img
+19/01/07  16:27               778 LED.ui
+19/06/04  14:53    <DIR>          LEDDriver
+19/06/04  14:53               196 LEDDriver.pack.yaml
+19/01/07  16:27             2,449 README.md
+19/01/07  16:27             1,155 run.py
+19/06/04  14:53    <DIR>          __pycache__
+               4 File(s)          4,578 bytes
+               5 Dir(s)  76,522,889,216 bytes free
+
+(lantz2) C:\Users\realm.DESKTOP-DQ0IJ8Q\Documents\GitHub\instrumentacion2\20190604\examples-master\arduino-qt-toogle-led>python run.py
+C:\Users\realm.DESKTOP-DQ0IJ8Q\.conda\envs\lantz2\lib\site-packages\lantz\ino\common.py:60: YAMLLoadWarning: calling yaml.load() without Loader=... is deprecated, as the default Loader is unsafe. Please read https://msg.pyyaml.org/load for full details.
+  data = yaml.load(fi)
+Traceback (most recent call last):
+  File "run.py", line 33, in <module>
+    with QLED.via_packfile('LEDDriver.pack.yaml', check_update=True) as board:
+  File "C:\Users\realm.DESKTOP-DQ0IJ8Q\.conda\envs\lantz2\lib\site-packages\lantz\ino\base.py", line 232, in via_packfile
+    arduinocli.compile_and_upload(pf, upload=True)
+  File "C:\Users\realm.DESKTOP-DQ0IJ8Q\.conda\envs\lantz2\lib\site-packages\lantz\ino\arduinocli.py", line 101, in compile_and_upload
+    boards = find_boards_pack(packfile)
+  File "C:\Users\realm.DESKTOP-DQ0IJ8Q\.conda\envs\lantz2\lib\site-packages\lantz\ino\arduinocli.py", line 73, in find_boards_pack
+    boards = find_boards(packfile.fqbn, packfile.port, packfile.usbID)
+  File "C:\Users\realm.DESKTOP-DQ0IJ8Q\.conda\envs\lantz2\lib\site-packages\lantz\ino\arduinocli.py", line 50, in find_boards
+    boards = run_arduino_cli('board list')
+  File "C:\Users\realm.DESKTOP-DQ0IJ8Q\.conda\envs\lantz2\lib\site-packages\lantz\ino\arduinocli.py", line 44, in run_arduino_cli
+    out = subprocess.run(['arduino-cli', '--format', 'json'] + args.split(' '), stdout=subprocess.PIPE)
+  File "C:\Users\realm.DESKTOP-DQ0IJ8Q\.conda\envs\lantz2\lib\subprocess.py", line 423, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "C:\Users\realm.DESKTOP-DQ0IJ8Q\.conda\envs\lantz2\lib\subprocess.py", line 729, in __init__
+    restore_signals, start_new_session)
+  File "C:\Users\realm.DESKTOP-DQ0IJ8Q\.conda\envs\lantz2\lib\subprocess.py", line 1017, in _execute_child
+    startupinfo)
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+
+(lantz2) C:\Users\realm.DESKTOP-DQ0IJ8Q\Documents\GitHub\instrumentacion2\20190604\examples-master\arduino-qt-toogle-led>arduino-cli
+'arduino-cli' is not recognized as an internal or external command,
+operable program or batch file.
+
+(lantz2) C:\Users\realm.DESKTOP-DQ0IJ8Q\Documents\GitHub\instrumentacion2\20190604\examples-master\arduino-qt-toogle-led>python run.py
+C:\Users\realm.DESKTOP-DQ0IJ8Q\.conda\envs\lantz2\lib\site-packages\lantz\ino\common.py:60: YAMLLoadWarning: calling yaml.load() without Loader=... is deprecated, as the default Loader is unsafe. Please read https://msg.pyyaml.org/load for full details.
+  data = yaml.load(fi)
+Traceback (most recent call last):
+  File "run.py", line 33, in <module>
+    with QLED.via_packfile('LEDDriver.pack.yaml', check_update=True) as board:
+  File "C:\Users\realm.DESKTOP-DQ0IJ8Q\.conda\envs\lantz2\lib\site-packages\lantz\ino\base.py", line 232, in via_packfile
+    arduinocli.compile_and_upload(pf, upload=True)
+  File "C:\Users\realm.DESKTOP-DQ0IJ8Q\.conda\envs\lantz2\lib\site-packages\lantz\ino\arduinocli.py", line 101, in compile_and_upload
+    boards = find_boards_pack(packfile)
+  File "C:\Users\realm.DESKTOP-DQ0IJ8Q\.conda\envs\lantz2\lib\site-packages\lantz\ino\arduinocli.py", line 73, in find_boards_pack
+    boards = find_boards(packfile.fqbn, packfile.port, packfile.usbID)
+  File "C:\Users\realm.DESKTOP-DQ0IJ8Q\.conda\envs\lantz2\lib\site-packages\lantz\ino\arduinocli.py", line 50, in find_boards
+    boards = run_arduino_cli('board list')
+  File "C:\Users\realm.DESKTOP-DQ0IJ8Q\.conda\envs\lantz2\lib\site-packages\lantz\ino\arduinocli.py", line 44, in run_arduino_cli
+    out = subprocess.run(['arduino-cli', '--format', 'json'] + args.split(' '), stdout=subprocess.PIPE)
+  File "C:\Users\realm.DESKTOP-DQ0IJ8Q\.conda\envs\lantz2\lib\subprocess.py", line 423, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "C:\Users\realm.DESKTOP-DQ0IJ8Q\.conda\envs\lantz2\lib\subprocess.py", line 729, in __init__
+    restore_signals, start_new_session)
+  File "C:\Users\realm.DESKTOP-DQ0IJ8Q\.conda\envs\lantz2\lib\subprocess.py", line 1017, in _execute_child
+    startupinfo)
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+
+(lantz2) C:\Users\realm.DESKTOP-DQ0IJ8Q\Documents\GitHub\instrumentacion2\20190604\examples-master\arduino-qt-toogle-led>python run.py
+C:\Users\realm.DESKTOP-DQ0IJ8Q\.conda\envs\lantz2\lib\site-packages\lantz\ino\common.py:60: YAMLLoadWarning: calling yaml.load() without Loader=... is deprecated, as the default Loader is unsafe. Please read https://msg.pyyaml.org/load for full details.
+  data = yaml.load(fi)
+Traceback (most recent call last):
+  File "run.py", line 33, in <module>
+    with QLED.via_packfile('LEDDriver.pack.yaml', check_update=True) as board:
+  File "C:\Users\realm.DESKTOP-DQ0IJ8Q\.conda\envs\lantz2\lib\site-packages\lantz\ino\base.py", line 232, in via_packfile
+    arduinocli.compile_and_upload(pf, upload=True)
+  File "C:\Users\realm.DESKTOP-DQ0IJ8Q\.conda\envs\lantz2\lib\site-packages\lantz\ino\arduinocli.py", line 101, in compile_and_upload
+    boards = find_boards_pack(packfile)
+  File "C:\Users\realm.DESKTOP-DQ0IJ8Q\.conda\envs\lantz2\lib\site-packages\lantz\ino\arduinocli.py", line 73, in find_boards_pack
+    boards = find_boards(packfile.fqbn, packfile.port, packfile.usbID)
+  File "C:\Users\realm.DESKTOP-DQ0IJ8Q\.conda\envs\lantz2\lib\site-packages\lantz\ino\arduinocli.py", line 50, in find_boards
+    boards = run_arduino_cli('board list')
+  File "C:\Users\realm.DESKTOP-DQ0IJ8Q\.conda\envs\lantz2\lib\site-packages\lantz\ino\arduinocli.py", line 44, in run_arduino_cli
+    out = subprocess.run(['arduino-cli', '--format', 'json'] + args.split(' '), stdout=subprocess.PIPE)
+  File "C:\Users\realm.DESKTOP-DQ0IJ8Q\.conda\envs\lantz2\lib\subprocess.py", line 423, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "C:\Users\realm.DESKTOP-DQ0IJ8Q\.conda\envs\lantz2\lib\subprocess.py", line 729, in __init__
+    restore_signals, start_new_session)
+  File "C:\Users\realm.DESKTOP-DQ0IJ8Q\.conda\envs\lantz2\lib\subprocess.py", line 1017, in _execute_child
+    startupinfo)
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+
+(lantz2) C:\Users\realm.DESKTOP-DQ0IJ8Q\Documents\GitHub\instrumentacion2\20190604\examples-master\arduino-qt-toogle-led>python run.py
+C:\Users\realm.DESKTOP-DQ0IJ8Q\.conda\envs\lantz2\lib\site-packages\lantz\ino\common.py:60: YAMLLoadWarning: calling yaml.load() without Loader=... is deprecated, as the default Loader is unsafe. Please read https://msg.pyyaml.org/load for full details.
+  data = yaml.load(fi)
+Traceback (most recent call last):
+  File "run.py", line 33, in <module>
+    with QLED.via_packfile('LEDDriver.pack.yaml', check_update=True) as board:
+  File "C:\Users\realm.DESKTOP-DQ0IJ8Q\.conda\envs\lantz2\lib\site-packages\lantz\ino\base.py", line 232, in via_packfile
+    arduinocli.compile_and_upload(pf, upload=True)
+  File "C:\Users\realm.DESKTOP-DQ0IJ8Q\.conda\envs\lantz2\lib\site-packages\lantz\ino\arduinocli.py", line 101, in compile_and_upload
+    boards = find_boards_pack(packfile)
+  File "C:\Users\realm.DESKTOP-DQ0IJ8Q\.conda\envs\lantz2\lib\site-packages\lantz\ino\arduinocli.py", line 73, in find_boards_pack
+    boards = find_boards(packfile.fqbn, packfile.port, packfile.usbID)
+  File "C:\Users\realm.DESKTOP-DQ0IJ8Q\.conda\envs\lantz2\lib\site-packages\lantz\ino\arduinocli.py", line 66, in find_boards
+    for b in boards['networkBoards']:
+KeyError: 'networkBoards'
+
+(lantz2) C:\Users\realm.DESKTOP-DQ0IJ8Q\Documents\GitHub\instrumentacion2\20190604\examples-master\arduino-qt-toogle-led>cd..
+
+(lantz2) C:\Users\realm.DESKTOP-DQ0IJ8Q\Documents\GitHub\instrumentacion2\20190604\examples-master>cd..
+
+(lantz2) C:\Users\realm.DESKTOP-DQ0IJ8Q\Documents\GitHub\instrumentacion2\20190604>cd..
+
+(lantz2) C:\Users\realm.DESKTOP-DQ0IJ8Q\Documents\GitHub\instrumentacion2>arduino-cli
+Arduino Command Line Interface (arduino-cli).
+
+Usage:
+  arduino-cli [command]
+
+Examples:
+  arduino-cli <command> [flags...]
+
+Available Commands:
+  board         Arduino board commands.
+  compile       Compiles Arduino sketches.
+  config        Arduino Configuration Commands.
+  core          Arduino Core operations.
+  help          Help about any command
+  lib           Arduino commands about libraries.
+  sketch        Arduino CLI Sketch Commands.
+  upload        Upload Arduino sketches.
+  version       Shows version number of arduino CLI.
+
+Flags:
+      --config-file string   The custom config file (if not specified the default will be used).
+      --debug                Enables debug output (super verbose, used to debug the CLI).
+      --format string        The output format, can be [text|json]. (default "text")
+  -h, --help                 help for arduino-cli
+
+Use "arduino-cli [command] --help" for more information about a command.
+
+(lantz2) C:\Users\realm.DESKTOP-DQ0IJ8Q\Documents\GitHub\instrumentacion2>dir
+ Volume in drive C is Windows
+ Volume Serial Number is B6A1-6176
+
+ Directory of C:\Users\realm.DESKTOP-DQ0IJ8Q\Documents\GitHub\instrumentacion2
+
+19/06/04  14:44    <DIR>          .
+19/06/04  14:44    <DIR>          ..
+19/05/29  20:43    <DIR>          20190319
+19/05/29  20:50    <DIR>          20190326
+19/05/29  20:50    <DIR>          20190409
+19/05/29  20:50    <DIR>          20190416
+19/05/29  20:50    <DIR>          20190423
+19/05/29  20:50    <DIR>          20190508
+19/05/29  20:50    <DIR>          20190515
+19/06/01  22:04    <DIR>          20190528
+19/06/04  14:47    <DIR>          20190604
+19/05/29  20:43               629 cos.py
+19/05/29  20:50    <DIR>          ideas otros grupos
+19/05/29  20:43               188 plotCoseno.py
+19/05/29  20:43               272 README.md
+19/05/29  20:50               318 README_GIT_WIN.txt
+               4 File(s)          1,407 bytes
+              12 Dir(s)  76,499,116,032 bytes free
+
+(lantz2) C:\Users\realm.DESKTOP-DQ0IJ8Q\Documents\GitHub\instrumentacion2>cd 20190604
+
+(lantz2) C:\Users\realm.DESKTOP-DQ0IJ8Q\Documents\GitHub\instrumentacion2\20190604>ls
+'ls' is not recognized as an internal or external command,
+operable program or batch file.
+
+(lantz2) C:\Users\realm.DESKTOP-DQ0IJ8Q\Documents\GitHub\instrumentacion2\20190604>dir
+ Volume in drive C is Windows
+ Volume Serial Number is B6A1-6176
+
+ Directory of C:\Users\realm.DESKTOP-DQ0IJ8Q\Documents\GitHub\instrumentacion2\20190604
+
+19/06/04  14:47    <DIR>          .
+19/06/04  14:47    <DIR>          ..
+19/01/07  16:27    <DIR>          examples-master
+               0 File(s)              0 bytes
+               3 Dir(s)  76,499,116,032 bytes free
+
+(lantz2) C:\Users\realm.DESKTOP-DQ0IJ8Q\Documents\GitHub\instrumentacion2\20190604>cd examples-master
+
+(lantz2) C:\Users\realm.DESKTOP-DQ0IJ8Q\Documents\GitHub\instrumentacion2\20190604\examples-master>dir
+ Volume in drive C is Windows
+ Volume Serial Number is B6A1-6176
+
+ Directory of C:\Users\realm.DESKTOP-DQ0IJ8Q\Documents\GitHub\instrumentacion2\20190604\examples-master
+
+19/01/07  16:27    <DIR>          .
+19/01/07  16:27    <DIR>          ..
+19/01/07  16:27               132 .gitignore
+19/01/07  16:27    <DIR>          arduino-qt-continuous
+19/01/07  16:27    <DIR>          arduino-qt-simple
+19/06/04  14:53    <DIR>          arduino-qt-toogle-led
+19/01/07  16:27               728 README.md
+               2 File(s)            860 bytes
+               5 Dir(s)  76,499,111,936 bytes free
+
+(lantz2) C:\Users\realm.DESKTOP-DQ0IJ8Q\Documents\GitHub\instrumentacion2\20190604\examples-master>cd arduino-qt-toogle-led
+
+(lantz2) C:\Users\realm.DESKTOP-DQ0IJ8Q\Documents\GitHub\instrumentacion2\20190604\examples-master\arduino-qt-toogle-led>dir
+ Volume in drive C is Windows
+ Volume Serial Number is B6A1-6176
+
+ Directory of C:\Users\realm.DESKTOP-DQ0IJ8Q\Documents\GitHub\instrumentacion2\20190604\examples-master\arduino-qt-toogle-led
+
+19/06/04  14:53    <DIR>          .
+19/06/04  14:53    <DIR>          ..
+19/01/07  16:27    <DIR>          img
+19/01/07  16:27               778 LED.ui
+19/06/04  14:53    <DIR>          LEDDriver
+19/06/04  14:53               196 LEDDriver.pack.yaml
+19/01/07  16:27             2,449 README.md
+19/01/07  16:27             1,155 run.py
+19/06/04  14:53    <DIR>          __pycache__
+               4 File(s)          4,578 bytes
+               5 Dir(s)  76,499,111,936 bytes free
+
+(lantz2) C:\Users\realm.DESKTOP-DQ0IJ8Q\Documents\GitHub\instrumentacion2\20190604\examples-master\arduino-qt-toogle-led>python run.py
+C:\Users\realm.DESKTOP-DQ0IJ8Q\.conda\envs\lantz2\lib\site-packages\lantz\ino\common.py:60: YAMLLoadWarning: calling yaml.load() without Loader=... is deprecated, as the default Loader is unsafe. Please read https://msg.pyyaml.org/load for full details.
+  data = yaml.load(fi)
+Traceback (most recent call last):
+  File "run.py", line 33, in <module>
+    with QLED.via_packfile('LEDDriver.pack.yaml', check_update=True) as board:
+  File "C:\Users\realm.DESKTOP-DQ0IJ8Q\.conda\envs\lantz2\lib\site-packages\lantz\ino\base.py", line 232, in via_packfile
+    arduinocli.compile_and_upload(pf, upload=True)
+  File "C:\Users\realm.DESKTOP-DQ0IJ8Q\.conda\envs\lantz2\lib\site-packages\lantz\ino\arduinocli.py", line 101, in compile_and_upload
+    boards = find_boards_pack(packfile)
+  File "C:\Users\realm.DESKTOP-DQ0IJ8Q\.conda\envs\lantz2\lib\site-packages\lantz\ino\arduinocli.py", line 73, in find_boards_pack
+    boards = find_boards(packfile.fqbn, packfile.port, packfile.usbID)
+  File "C:\Users\realm.DESKTOP-DQ0IJ8Q\.conda\envs\lantz2\lib\site-packages\lantz\ino\arduinocli.py", line 66, in find_boards
+    for b in boards['networkBoards']:
+KeyError: 'networkBoards'
+
+(lantz2) C:\Users\realm.DESKTOP-DQ0IJ8Q\Documents\GitHub\instrumentacion2\20190604\examples-master\arduino-qt-toogle-led>arduinocli
+'arduinocli' is not recognized as an internal or external command,
+operable program or batch file.
+
+(lantz2) C:\Users\realm.DESKTOP-DQ0IJ8Q\Documents\GitHub\instrumentacion2\20190604\examples-master\arduino-qt-toogle-led>arduino-cli
+Arduino Command Line Interface (arduino-cli).
+
+Usage:
+  arduino-cli [command]
+
+Examples:
+  arduino-cli <command> [flags...]
+
+Available Commands:
+  board         Arduino board commands.
+  compile       Compiles Arduino sketches.
+  config        Arduino Configuration Commands.
+  core          Arduino Core operations.
+  help          Help about any command
+  lib           Arduino commands about libraries.
+  sketch        Arduino CLI Sketch Commands.
+  upload        Upload Arduino sketches.
+  version       Shows version number of arduino CLI.
+
+Flags:
+      --config-file string   The custom config file (if not specified the default will be used).
+      --debug                Enables debug output (super verbose, used to debug the CLI).
+      --format string        The output format, can be [text|json]. (default "text")
+  -h, --help                 help for arduino-cli
+
+Use "arduino-cli [command] --help" for more information about a command.
+
+(lantz2) C:\Users\realm.DESKTOP-DQ0IJ8Q\Documents\GitHub\instrumentacion2\20190604\examples-master\arduino-qt-toogle-led>arduino-cli board
+Arduino board commands.
+
+Usage:
+  arduino-cli board [command]
+
+Examples:
+  # Lists all connected boards.
+  arduino-cli board list
+
+  # Attaches a sketch to a board.
+  arduino-cli board attach serial:///dev/tty/ACM0 mySketch
+
+Available Commands:
+  attach      Attaches a sketch to a board.
+  details     Print details about a board.
+  list        List connected boards.
+  listall     List all known boards and their corresponding FQBN.
+
+Flags:
+  -h, --help   help for board
+
+Global Flags:
+      --config-file string   The custom config file (if not specified the default will be used).
+      --debug                Enables debug output (super verbose, used to debug the CLI).
+      --format string        The output format, can be [text|json]. (default "text")
+
+Use "arduino-cli board [command] --help" for more information about a command.
+
+(lantz2) C:\Users\realm.DESKTOP-DQ0IJ8Q\Documents\GitHub\instrumentacion2\20190604\examples-master\arduino-qt-toogle-led>arduino-cli board list
+Error: loading json index file C:\Users\realm.DESKTOP-DQ0IJ8Q\AppData\Local\Arduino15\package_index.json: open C:\Users\realm.DESKTOP-DQ0IJ8Q\AppData\Local\Arduino15\package_index.json: The system cannot find the path specified.
+Failed to load https://downloads.arduino.cc/packages/package_index.json package index.
+Try updating all indexes with `arduino-cli core update-index`.
+
+(lantz2) C:\Users\realm.DESKTOP-DQ0IJ8Q\Documents\GitHub\instrumentacion2\20190604\examples-master\arduino-qt-toogle-led>arduino-cli
+Arduino Command Line Interface (arduino-cli).
+
+Usage:
+  arduino-cli [command]
+
+Examples:
+  arduino-cli <command> [flags...]
+
+Available Commands:
+  board         Arduino board commands.
+  compile       Compiles Arduino sketches.
+  config        Arduino Configuration Commands.
+  core          Arduino Core operations.
+  help          Help about any command
+  lib           Arduino commands about libraries.
+  sketch        Arduino CLI Sketch Commands.
+  upload        Upload Arduino sketches.
+  version       Shows version number of arduino CLI.
+
+Flags:
+      --config-file string   The custom config file (if not specified the default will be used).
+      --debug                Enables debug output (super verbose, used to debug the CLI).
+      --format string        The output format, can be [text|json]. (default "text")
+  -h, --help                 help for arduino-cli
+
+Use "arduino-cli [command] --help" for more information about a command.
+
+(lantz2) C:\Users\realm.DESKTOP-DQ0IJ8Q\Documents\GitHub\instrumentacion2\20190604\examples-master\arduino-qt-toogle-led>arduino-cli lib
+Arduino commands about libraries.
+
+Usage:
+  arduino-cli lib [command]
+
+Examples:
+  arduino-cli lib install AudioZero
+  arduino-cli lib update-index
+
+Available Commands:
+  download     Downloads one or more libraries without installing them.
+  install      Installs one of more specified libraries into the system.
+  list         Shows a list of all installed libraries.
+  search       Searchs for one or more libraries data.
+  uninstall    Uninstalls one or more libraries.
+  update-index Updates the libraries index.
+  upgrade      Upgrades installed libraries.
+
+Flags:
+  -h, --help   help for lib
+
+Global Flags:
+      --config-file string   The custom config file (if not specified the default will be used).
+      --debug                Enables debug output (super verbose, used to debug the CLI).
+      --format string        The output format, can be [text|json]. (default "text")
+
+Use "arduino-cli lib [command] --help" for more information about a command.
+
+(lantz2) C:\Users\realm.DESKTOP-DQ0IJ8Q\Documents\GitHub\instrumentacion2\20190604\examples-master\arduino-qt-toogle-led>lantz ino refresh
+Updating index: package_index.json downloaded
+Searching for platforms matching 'list'
+
+No platforms matching your search
+You might need to install extra tools for your board:
+     https://github.com/arduino/arduino-cli
+Updating index: library_index.json downloaded
+Updating index: library_index.json downloaded
+
+(lantz2) C:\Users\realm.DESKTOP-DQ0IJ8Q\Documents\GitHub\instrumentacion2\20190604\examples-master\arduino-qt-toogle-led>arduino-cli board list
+FQBN    Port    ID              Board Name
+        COM5    2341:0043       unknown
+
+
+(lantz2) C:\Users\realm.DESKTOP-DQ0IJ8Q\Documents\GitHub\instrumentacion2\20190604\examples-master\arduino-qt-toogle-led>arduino-cli board
+Arduino board commands.
+
+Usage:
+  arduino-cli board [command]
+
+Examples:
+  # Lists all connected boards.
+  arduino-cli board list
+
+  # Attaches a sketch to a board.
+  arduino-cli board attach serial:///dev/tty/ACM0 mySketch
+
+Available Commands:
+  attach      Attaches a sketch to a board.
+  details     Print details about a board.
+  list        List connected boards.
+  listall     List all known boards and their corresponding FQBN.
+
+Flags:
+  -h, --help   help for board
+
+Global Flags:
+      --config-file string   The custom config file (if not specified the default will be used).
+      --debug                Enables debug output (super verbose, used to debug the CLI).
+      --format string        The output format, can be [text|json]. (default "text")
+
+Use "arduino-cli board [command] --help" for more information about a command.
+
+(lantz2) C:\Users\realm.DESKTOP-DQ0IJ8Q\Documents\GitHub\instrumentacion2\20190604\examples-master\arduino-qt-toogle-led>arduino-cli board details
+Error: accepts 1 arg(s), received 0
+Usage:
+  arduino-cli board details <FQBN> [flags]
+
+Examples:
+  arduino-cli board details arduino:avr:nano
+
+Flags:
+  -h, --help   help for details
+
+Global Flags:
+      --config-file string   The custom config file (if not specified the default will be used).
+      --debug                Enables debug output (super verbose, used to debug the CLI).
+      --format string        The output format, can be [text|json]. (default "text")
+
+Error: accepts 1 arg(s), received 0
+Bad exit.
+
+(lantz2) C:\Users\realm.DESKTOP-DQ0IJ8Q\Documents\GitHub\instrumentacion2\20190604\examples-master\arduino-qt-toogle-led>arduino-cli board list
+FQBN    Port    ID              Board Name
+        COM5    2341:0043       unknown
+
+
+(lantz2) C:\Users\realm.DESKTOP-DQ0IJ8Q\Documents\GitHub\instrumentacion2\20190604\examples-master\arduino-qt-toogle-led>arduino-cli lib
+Arduino commands about libraries.
+
+Usage:
+  arduino-cli lib [command]
+
+Examples:
+  arduino-cli lib install AudioZero
+  arduino-cli lib update-index
+
+Available Commands:
+  download     Downloads one or more libraries without installing them.
+  install      Installs one of more specified libraries into the system.
+  list         Shows a list of all installed libraries.
+  search       Searchs for one or more libraries data.
+  uninstall    Uninstalls one or more libraries.
+  update-index Updates the libraries index.
+  upgrade      Upgrades installed libraries.
+
+Flags:
+  -h, --help   help for lib
+
+Global Flags:
+      --config-file string   The custom config file (if not specified the default will be used).
+      --debug                Enables debug output (super verbose, used to debug the CLI).
+      --format string        The output format, can be [text|json]. (default "text")
+
+Use "arduino-cli lib [command] --help" for more information about a command.
+
+(lantz2) C:\Users\realm.DESKTOP-DQ0IJ8Q\Documents\GitHub\instrumentacion2\20190604\examples-master\arduino-qt-toogle-led>arduino-cli lib install
+Error: requires at least 1 arg(s), only received 0
+Usage:
+  arduino-cli lib install LIBRARY[@VERSION_NUMBER](S) [flags]
+
+Examples:
+  arduino-cli lib install AudioZero       # for the latest version.
+  arduino-cli lib install AudioZero@1.0.0 # for the specific version.
+
+Flags:
+  -h, --help   help for install
+
+Global Flags:
+      --config-file string   The custom config file (if not specified the default will be used).
+      --debug                Enables debug output (super verbose, used to debug the CLI).
+      --format string        The output format, can be [text|json]. (default "text")
+
+Error: requires at least 1 arg(s), only received 0
+Bad exit.
+
+(lantz2) C:\Users\realm.DESKTOP-DQ0IJ8Q\Documents\GitHub\instrumentacion2\20190604\examples-master\arduino-qt-toogle-led>arduino-cli
+Arduino Command Line Interface (arduino-cli).
+
+Usage:
+  arduino-cli [command]
+
+Examples:
+  arduino-cli <command> [flags...]
+
+Available Commands:
+  board         Arduino board commands.
+  compile       Compiles Arduino sketches.
+  config        Arduino Configuration Commands.
+  core          Arduino Core operations.
+  help          Help about any command
+  lib           Arduino commands about libraries.
+  sketch        Arduino CLI Sketch Commands.
+  upload        Upload Arduino sketches.
+  version       Shows version number of arduino CLI.
+
+Flags:
+      --config-file string   The custom config file (if not specified the default will be used).
+      --debug                Enables debug output (super verbose, used to debug the CLI).
+      --format string        The output format, can be [text|json]. (default "text")
+  -h, --help                 help for arduino-cli
+
+Use "arduino-cli [command] --help" for more information about a command.
+
+(lantz2) C:\Users\realm.DESKTOP-DQ0IJ8Q\Documents\GitHub\instrumentacion2\20190604\examples-master\arduino-qt-toogle-led>arduino-cli core
+Arduino Core operations.
+
+Usage:
+  arduino-cli core [command]
+
+Examples:
+  arduino-cli core update-index
+
+Available Commands:
+  download     Downloads one or more cores and corresponding tool dependencies.
+  install      Installs one or more cores and corresponding tool dependencies.
+  list         Shows the list of installed platforms.
+  search       Search for a core in the package index.
+  uninstall    Uninstalls one or more cores and corresponding tool dependencies if no more used.
+  update-index Updates the index of cores.
+  upgrade      Upgrades one or all installed platforms to the latest version.
+
+Flags:
+  -h, --help   help for core
+
+Global Flags:
+      --config-file string   The custom config file (if not specified the default will be used).
+      --debug                Enables debug output (super verbose, used to debug the CLI).
+      --format string        The output format, can be [text|json]. (default "text")
+
+Use "arduino-cli core [command] --help" for more information about a command.
+
+(lantz2) C:\Users\realm.DESKTOP-DQ0IJ8Q\Documents\GitHub\instrumentacion2\20190604\examples-master\arduino-qt-toogle-led>arduino-cli core install
+Error: requires at least 1 arg(s), only received 0
+Usage:
+  arduino-cli core install PACKAGER:ARCH[@VERSION] ... [flags]
+
+Examples:
+  # download the latest version of arduino SAMD core.
+  arduino-cli core install arduino:samd
+
+  # download a specific version (in this case 1.6.9).
+  arduino-cli core install arduino:samd=1.6.9
+
+Flags:
+  -h, --help   help for install
+
+Global Flags:
+      --config-file string   The custom config file (if not specified the default will be used).
+      --debug                Enables debug output (super verbose, used to debug the CLI).
+      --format string        The output format, can be [text|json]. (default "text")
+
+Error: requires at least 1 arg(s), only received 0
+Bad exit.
+
+(lantz2) C:\Users\realm.DESKTOP-DQ0IJ8Q\Documents\GitHub\instrumentacion2\20190604\examples-master\arduino-qt-toogle-led>arduino-cli core list
+
+(lantz2) C:\Users\realm.DESKTOP-DQ0IJ8Q\Documents\GitHub\instrumentacion2\20190604\examples-master\arduino-qt-toogle-led>arduino-cli core install arduino:avr:uno
+Error: invalid item arduino:avr:uno
+Invalid item arduino:avr:uno
+
+(lantz2) C:\Users\realm.DESKTOP-DQ0IJ8Q\Documents\GitHub\instrumentacion2\20190604\examples-master\arduino-qt-toogle-led>arduino-cli core search arduino
+Searching for platforms matching 'arduino'
+
+ID                      Version Name
+Intel:arc32             2.0.4   Intel Curie Boards
+arduino:avr             1.6.23  Arduino AVR Boards
+arduino:megaavr         1.8.1   Arduino megaAVR Boards
+arduino:nrf52           1.0.2   Arduino nRF52 Boards
+arduino:sam             1.6.12  Arduino SAM Boards (32-bits ARM Cortex-M3)
+arduino:samd            1.6.21  Arduino SAMD Boards (32-bits ARM Cortex-M0+)
+arduino:samd_beta       1.6.25  Arduino SAMD Beta Boards (32-bits ARM Cortex-M0+)
+arduino:stm32f4         1.0.1   Arduino STM32F4 Boards
+littleBits:avr          1.0.0   littleBits Arduino AVR Modules
+
+
+(lantz2) C:\Users\realm.DESKTOP-DQ0IJ8Q\Documents\GitHub\instrumentacion2\20190604\examples-master\arduino-qt-toogle-led>arduino-cli core install arduino:avr
+Downloading arduino:avr-gcc@5.4.0-atmel3.6.1-arduino2...
+arduino:avr-gcc@5.4.0-atmel3.6.1-arduino2 downloaded
+Downloading arduino:avrdude@6.3.0-arduino14...
+arduino:avrdude@6.3.0-arduino14 downloaded
+Downloading arduino:arduinoOTA@1.2.1...
+arduino:arduinoOTA@1.2.1 downloaded
+Downloading arduino:avr@1.6.23...
+arduino:avr@1.6.23 downloaded
+Installing arduino:avr-gcc@5.4.0-atmel3.6.1-arduino2...
+arduino:avr-gcc@5.4.0-atmel3.6.1-arduino2 installed
+Installing arduino:avrdude@6.3.0-arduino14...
+arduino:avrdude@6.3.0-arduino14 installed
+Installing arduino:arduinoOTA@1.2.1...
+arduino:arduinoOTA@1.2.1 installed
+Installing arduino:avr@1.6.23...
+arduino:avr@1.6.23 installed
+
+(lantz2) C:\Users\realm.DESKTOP-DQ0IJ8Q\Documents\GitHub\instrumentacion2\20190604\examples-master\arduino-qt-toogle-led>
+
+
+
+
+
+Modificar README.MD
+
+dice 
+lantz config core.visa_backend '@py'
+
+
+si aparece error de json seguir los pasos indicados:
+`arduino-cli core-update index`
+debe decir
+lantz config core.visa_backend @py
